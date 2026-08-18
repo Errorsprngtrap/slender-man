@@ -4,10 +4,12 @@ extends Camera3D
 @export var sensibility : float = 0.002
 var player : Player
 
+#set up the camera mode
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player = get_parent()
 
+#take into account player input 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		
@@ -18,5 +20,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			print("detected escape key")
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			
-		if event is InputEventMouseMotion and event.is_pressed():
+		if event is InputEventMouseMotion and event.pressed:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
