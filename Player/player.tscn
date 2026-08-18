@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bmb4ronuyatkf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ssidi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ssidi"]
+radius = 0.5292969
+height = 2.057129
+
+[node name="Player" type="CharacterBody3D" unique_id=1494073252]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=560899649]
+mesh = SubResource("CapsuleMesh_ssidi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=242626477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.028564453, 0)
+shape = SubResource("CapsuleShape3D_ssidi")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=74602381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47221303, 0)

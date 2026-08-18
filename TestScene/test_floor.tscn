@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://chv7u4evjfi3r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ssidi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3d320"]
+size = Vector3(8, 1, 8)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y2sxc"]
+data = PackedVector3Array(-4, 0.5, 4, 4, 0.5, 4, -4, -0.5, 4, 4, 0.5, 4, 4, -0.5, 4, -4, -0.5, 4, 4, 0.5, -4, -4, 0.5, -4, 4, -0.5, -4, -4, 0.5, -4, -4, -0.5, -4, 4, -0.5, -4, 4, 0.5, 4, 4, 0.5, -4, 4, -0.5, 4, 4, 0.5, -4, 4, -0.5, -4, 4, -0.5, 4, -4, 0.5, -4, -4, 0.5, 4, -4, -0.5, -4, -4, 0.5, 4, -4, -0.5, 4, -4, -0.5, -4, 4, 0.5, 4, -4, 0.5, 4, 4, 0.5, -4, -4, 0.5, 4, -4, 0.5, -4, 4, 0.5, -4, -4, -0.5, 4, 4, -0.5, 4, -4, -0.5, -4, 4, -0.5, 4, 4, -0.5, -4, -4, -0.5, -4)
+
+[node name="TestFloor" type="StaticBody3D" unique_id=538688912]
+physics_material_override = SubResource("PhysicsMaterial_ssidi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=493713536]
+mesh = SubResource("BoxMesh_3d320")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=877811503]
+shape = SubResource("ConcavePolygonShape3D_y2sxc")
