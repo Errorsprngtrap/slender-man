@@ -15,10 +15,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		player.rotate_y(-event.relative.x * sensibility)
 		rotate_x(-event.relative.y * sensibility)
-		
-		if Input.is_action_just_pressed("escape"):
+	
+	if Input.is_action_just_pressed("escape"):
 			print("detected escape key")
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			
-		if event is InputEventMouseMotion and event.is_pressed():
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if event is InputEventMouseMotion and event.is_pressed():
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

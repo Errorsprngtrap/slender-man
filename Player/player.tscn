@@ -10,6 +10,7 @@ radius = 0.5292969
 height = 2.057129
 
 [node name="Player" type="CharacterBody3D" unique_id=1494073252]
+collision_mask = 2
 script = ExtResource("1_4ntmi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=560899649]
