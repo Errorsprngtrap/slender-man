@@ -1,11 +1,22 @@
+class_name Player_Camera
 extends Camera3D
 
+@export var sensibility : float = 0.002
+var player : Player
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	player = get_parent()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		
+		player.rotate_y(-event.relative.x * sensibility)
+		rotate_x(-event.relative.y * sensibility)
+		
+		if Input.is_action_just_pressed("escape"):
+			print("detected escape key")
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			
+		if event is InputEventMouseMotion and event.is_pressed():
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
