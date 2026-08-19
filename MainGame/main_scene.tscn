@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chv7u4evjfi3r" path="res://TestScene/test_floor.tscn" id="1_lovf7"]
 [ext_resource type="PackedScene" uid="uid://bmb4ronuyatkf" path="res://Player/player.tscn" id="2_hsoks"]
+[ext_resource type="PackedScene" uid="uid://cmgmhkdx4b0gn" path="res://Battery/battery.tscn" id="3_la8ki"]
 
 [node name="MainScene" type="Node3D" unique_id=1673730376]
 
@@ -15,3 +16,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.551155, 2, 0.3703928)
 
 [node name="Player" parent="." unique_id=1494073252 instance=ExtResource("2_hsoks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9865471, 2.1727886, 2.5837297)
+
+[node name="Battery2" parent="." unique_id=625186073 instance=ExtResource("3_la8ki")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.348912, 1.75, -0.018763542)

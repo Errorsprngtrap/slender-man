@@ -1,4 +1,4 @@
-class_name FlashLight extends Node
+class_name FlashLight extends Node3D
 
 @export var battery : float = 100.0
 var flashlightOn : bool = false
@@ -19,9 +19,10 @@ func _input(event: InputEvent) -> void:
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print("battery", battery)
 	if 0 >= battery :
 		light.light_energy = 0
 		
 	if flashlightOn and battery > 0:
-		battery -= .0001
+		battery -= .1
 		
