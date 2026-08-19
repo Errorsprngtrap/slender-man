@@ -4,8 +4,8 @@ extends CharacterBody3D
 @export var maxHealth : float = 20
 var health : float = maxHealth
 
-var minSpeed : float = 100.0
-var maxSpeed : float = 300.0
+var minSpeed : float = 10.0
+var maxSpeed : float = 60.0
 var speed : float = minSpeed
 
 func _physics_process(delta: float) -> void:
@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	
 	#handle gravity 
 	if not is_on_floor() :
-		velocity.y -= get_gravity().y
+		velocity.y += get_gravity().y * delta
 		
 	var inputDirection : Vector2 = Input.get_vector("left","right","foward","backward")
 	var direction :Vector3 = (transform.basis * Vector3(inputDirection.x,0,inputDirection.y)).normalized()

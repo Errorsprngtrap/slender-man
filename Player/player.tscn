@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg5xujrbncrfp" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Script" uid="uid://b3cnf5a26u4dp" path="res://Player/camera_3d.gd" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://cejcdkyit30b7" path="res://Player/flashlight.gd" id="3_btcbx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ssidi"]
 
@@ -23,3 +24,24 @@ shape = SubResource("CapsuleShape3D_ssidi")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=74602381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47221303, 0)
 script = ExtResource("1_l8h54")
+
+[node name="TopLight" type="SpotLight3D" parent="." unique_id=995318272]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.0352159, 0)
+light_size = 0.15
+distance_fade_enabled = true
+distance_fade_length = 11.45
+spot_range = 4.515
+spot_angle = 30.44
+
+[node name="Flashlight" type="Node" parent="." unique_id=1779584337]
+script = ExtResource("3_btcbx")
+
+[node name="FlashLightL" type="SpotLight3D" parent="Flashlight" unique_id=1129217982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35899723, -0.55959785)
+light_energy = 0.0
+light_volumetric_fog_energy = 3.314
+light_size = 0.336
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 6.3649135
+spot_angle = 56.905163
