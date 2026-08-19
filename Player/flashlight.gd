@@ -11,9 +11,9 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("flashlight") and battery > 0 :
 		flashlightOn = not flashlightOn
 		if flashlightOn :
-			light.light_energy = 0
-		else :
 			light.light_energy = 1
+		else :
+			light.light_energy = 0
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
