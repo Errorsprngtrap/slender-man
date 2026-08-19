@@ -33,15 +33,15 @@ distance_fade_length = 11.45
 spot_range = 4.515
 spot_angle = 30.44
 
-[node name="Flashlight" type="Node" parent="." unique_id=1779584337]
+[node name="Flashlight" type="Node3D" parent="." unique_id=1273372560]
 script = ExtResource("3_btcbx")
 
 [node name="FlashLightL" type="SpotLight3D" parent="Flashlight" unique_id=1129217982]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35899723, -0.55959785)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35899723, -0.56400573)
 light_energy = 0.0
 light_volumetric_fog_energy = 3.314
 light_size = 0.336
 shadow_enabled = true
 distance_fade_enabled = true
-spot_range = 6.3649135
-spot_angle = 56.905163
+spot_range = 9.903441
+spot_angle = 51.792427
