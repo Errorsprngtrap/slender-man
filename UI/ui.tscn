@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ga4h8121e1gx"]
+
+[ext_resource type="Script" uid="uid://tydlsgpuwa7e" path="res://UI/ui.gd" id="1_2fwl4"]
+
+[node name="UI" type="Control" unique_id=7497177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_2fwl4")
+metadata/_edit_use_anchors_ = true
+
+[node name="PagesCounter" type="Label" parent="." unique_id=1918921039]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pages collected 0/8"
+
+[node name="BatteryLife" type="Label" parent="." unique_id=1778023832]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Battery : ..."

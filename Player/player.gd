@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var flashlight: FlashLight = $Flashlight
 
 @export var maxHealth : float = 20
+@export var playerUIScreen : Control
 var health : float = maxHealth
 var minSpeed : float = 10.0
 var maxSpeed : float = 60.0
@@ -12,6 +13,8 @@ var speed : float = minSpeed
 var collectedPages :int = 0
 var pagesToCollect : int = 8
 
+func _ready() -> void:
+	playerUIScreen.updateBattery(self)
 
 func _physics_process(delta: float) -> void:
 	#handle movement

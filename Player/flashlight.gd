@@ -4,6 +4,8 @@ class_name FlashLight extends Node3D
 var flashlightOn : bool = false
 var light : SpotLight3D
 
+signal flashlight_battery_update(battery:float)
+
 func  _ready() -> void:
 	light = $FlashLightL
 	
@@ -25,6 +27,7 @@ func _process(delta: float) -> void:
 		
 	if flashlightOn and battery > 0:
 		battery -= .1
+		flashlight_battery_update.emit(battery)
 		
 func add_battery(amount:float)->void:
 	print('battry gave back: ',amount," lamp was at : ",battery)
@@ -33,3 +36,4 @@ func add_battery(amount:float)->void:
 	else:
 		battery += amount
 	print('battry is now back: ',amount," lamp was at : ",battery)
+	flashlight_battery_update.emit(battery)

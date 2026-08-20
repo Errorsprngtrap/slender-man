@@ -6,4 +6,5 @@ func interaction_result(plr:Player) -> void:
 	if clickedAlready == false :
 		clickedAlready = true
 		plr.collectedPages += 1
+		plr.playerUIScreen.pagesUpdate(plr)
 		queue_free()
