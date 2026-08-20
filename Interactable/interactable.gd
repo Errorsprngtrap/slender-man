@@ -4,4 +4,9 @@ extends Node3D
 
 #let you interact with it
 func interact() ->void :
-	pass
+	interaction_result()
+
+#do wathever
+func interaction_result() -> void:
+	print("collected: ",name)
+	queue_free()

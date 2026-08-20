@@ -8,6 +8,8 @@ var minSpeed : float = 10.0
 var maxSpeed : float = 60.0
 var speed : float = minSpeed
 
+@onready var ray: RayCast3D = $Camera3D/RayCast3D
+
 func _physics_process(delta: float) -> void:
 	#handle movement
 	
@@ -26,3 +28,14 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z,0,speed)
 	
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("Interact"):
+		print("tryed to interact")
+		interact()
+
+func interact() -> void : 
+	var hit = ray.get_collider()
+	print("hit var: ",hit)
+	if hit and hit.has_method("interact") :
+		print("method found")
+		hit.interact()
