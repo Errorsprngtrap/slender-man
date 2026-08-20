@@ -36,6 +36,9 @@ func _physics_process(delta: float) -> void:
 func interact() -> void : 
 	var hit = ray.get_collider()
 	print("hit var: ",hit)
-	if hit and hit.has_method("interact") :
-		print("method found")
-		hit.interact()
+	if hit and hit.is_class("Area3D"):
+		var object : Interactable3D = hit.get_parent()
+		print(hit.name)
+		if object and object.has_method("interact") :
+			print("method found")
+			object.interact()
