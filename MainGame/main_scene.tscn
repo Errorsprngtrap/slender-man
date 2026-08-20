@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://chv7u4evjfi3r" path="res://TestScene/test_floor.tscn" id="1_lovf7"]
 [ext_resource type="PackedScene" uid="uid://bmb4ronuyatkf" path="res://Player/player.tscn" id="2_hsoks"]
 [ext_resource type="PackedScene" uid="uid://cmgmhkdx4b0gn" path="res://Battery/battery.tscn" id="3_la8ki"]
-[ext_resource type="PackedScene" uid="uid://cqtxvy4vvmsem" path="res://testAsset/test_interactable.tscn" id="4_nvysj"]
+[ext_resource type="PackedScene" uid="uid://balqxxrtsqu5t" path="res://Pages/page.tscn" id="4_nvysj"]
 
 [node name="MainScene" type="Node3D" unique_id=1673730376]
 
@@ -21,5 +21,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9865471, 2.1727886, 2.5837
 [node name="Battery2" parent="." unique_id=625186073 instance=ExtResource("3_la8ki")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.348912, 1.75, -0.018763542)
 
-[node name="TestInteractable" parent="." unique_id=990593533 instance=ExtResource("4_nvysj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3411403, 2, 0.20020688)
+[node name="Page" parent="." unique_id=481804184 instance=ExtResource("4_nvysj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3481276, 2.5, 0.35099602)

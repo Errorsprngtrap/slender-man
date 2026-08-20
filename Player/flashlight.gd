@@ -21,7 +21,15 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if 0 >= battery :
 		light.light_energy = 0
+		flashlightOn = false
 		
 	if flashlightOn and battery > 0:
 		battery -= .1
 		
+func add_battery(amount:float)->void:
+	print('battry gave back: ',amount," lamp was at : ",battery)
+	if battery + amount > 100:
+		battery = 100
+	else:
+		battery += amount
+	print('battry is now back: ',amount," lamp was at : ",battery)
