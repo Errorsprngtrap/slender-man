@@ -13,9 +13,6 @@ var speed : float = minSpeed
 var collectedPages :int = 0
 var pagesToCollect : int = 8
 
-func _ready() -> void:
-	playerUIScreen.updateBattery(self)
-
 func _physics_process(delta: float) -> void:
 	#handle movement
 	#handle gravity 

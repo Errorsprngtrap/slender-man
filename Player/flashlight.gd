@@ -8,6 +8,7 @@ signal flashlight_battery_update(battery:float)
 
 func  _ready() -> void:
 	light = $FlashLightL
+	flashlight_battery_update.emit(battery)
 	
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("flashlight") and battery > 0 :
