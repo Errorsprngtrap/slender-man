@@ -3,7 +3,6 @@ extends CharacterBody3D
 
 @export var maxHealth : float = 20
 var health : float = maxHealth
-
 var minSpeed : float = 10.0
 var maxSpeed : float = 60.0
 var speed : float = minSpeed
@@ -41,4 +40,4 @@ func interact() -> void :
 		print(hit.name)
 		if object and object.has_method("interact") :
 			print("method found")
-			object.interact()
+			object.interact(self)
