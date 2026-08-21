@@ -59,7 +59,9 @@ func _process(delta: float) -> void:
 	SlenderDetected()
 
 func SlenderDetected()->void:
-	var maySlender
+	var slender
 	for i in slenderDetector.get_collision_count() :
-		print(i)
+		if slenderDetector.get_collider(i).is_class("Slender") :
+			slender = slenderDetector.get_collider(i)
+			print("slenderman found")
 	
