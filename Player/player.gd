@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @onready var ray: RayCast3D = $Camera3D/RayCast3D
 @onready var flashlight: FlashLight = $Flashlight
+@onready var slenderDetector: ShapeCast3D = $Camera3D/ShapeCast3D
 
 @export var maxHealth : float = 20
 @export var playerUIScreen : Control
@@ -50,3 +51,15 @@ func interact() -> void :
 func update_pages()->void:
 	if pagesToCollect == collectedPages:
 		get_tree().quit()
+
+func death()->void:
+	get_tree().quit()
+
+func _process(delta: float) -> void:
+	SlenderDetected()
+
+func SlenderDetected()->void:
+	var maySlender
+	for i in slenderDetector.get_collision_count() :
+		print(i)
+	
