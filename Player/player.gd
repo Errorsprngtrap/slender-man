@@ -61,7 +61,11 @@ func _process(delta: float) -> void:
 func SlenderDetected()->void:
 	var slender
 	for i in slenderDetector.get_collision_count() :
-		if slenderDetector.get_collider(i).is_class("Slender") :
+		if slenderDetector.get_collider(i) is Slender :
 			slender = slenderDetector.get_collider(i)
 			print("slenderman found")
+			if health > 0:
+				health -= 1
+			else :
+				get_tree().quit()
 	
