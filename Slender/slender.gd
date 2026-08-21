@@ -14,6 +14,18 @@ var waitPerPage = {
 	"7" = 10
 }
 
+const SPD : float = 3.25
+
+func _ready() -> void:
+	tp_timer.wait_time = waitPerPage["0"]
+	tp_timer.autostart = true
+	tp_timer.start()
+
+func _physics_process(delta: float) -> void:
+	#Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		
 
 #extends CharacterBody3D
 #
@@ -48,3 +60,6 @@ var waitPerPage = {
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.has_method("death"):
 		body.death()
+
+func _on_tp_timer_timeout() -> void:
+	print("slender teleported")
