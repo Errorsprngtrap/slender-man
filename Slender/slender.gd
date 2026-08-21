@@ -45,10 +45,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_tp_timer_timeout() -> void:
 	print("slender teleported")
 	global_position = get_tp_point()
+	collectedPage = player.collectedPages
 	currentSlenderTpCD = waitPerPage[str(collectedPage)]["CD"]
 	minRad = waitPerPage[str(collectedPage)]["minRad"]
 	maxRad = waitPerPage[str(collectedPage)]["maxRad"]
 
 func get_tp_point()->Vector3:
-	
 	return Vector3(0,0,0)
