@@ -6,11 +6,12 @@ extends Control
 var flashlight : FlashLight
 
 func _ready() -> void:
-	call_deferred("_conneclight")
+	call_deferred("_connectlight")
 	
 func _connectlight()->void:
 	flashlight = plr.flashlight
 	flashlight.flashlight_battery_update.connect(updateBattery)
+	updateBattery(flashlight.battery)
 	
 func updateBattery(battery:float) -> void:
 	print("yes?")

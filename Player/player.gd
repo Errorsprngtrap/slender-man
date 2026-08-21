@@ -46,3 +46,7 @@ func interact() -> void :
 		if object and object.has_method("interact") :
 			print("method found")
 			object.interact(self)
+
+func update_pages()->void:
+	if pagesToCollect == collectedPages:
+		get_tree().quit()
