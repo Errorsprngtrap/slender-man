@@ -234,5 +234,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.36119, 0, 44.160233)
 [node name="TestFloor64" parent="." unique_id=626722040 instance=ExtResource("1_lovf7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.54234, 0, 51.190666)
 
-[node name="Slender" parent="." unique_id=1873581079 instance=ExtResource("6_7tjht")]
+[node name="Slender" parent="." unique_id=1873581079 node_paths=PackedStringArray("player") instance=ExtResource("6_7tjht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 2, 32)
+player = NodePath("../Player")

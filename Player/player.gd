@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var ray: RayCast3D = $Camera3D/RayCast3D
 @onready var flashlight: FlashLight = $Flashlight
 @onready var slenderDetector: ShapeCast3D = $Camera3D/ShapeCast3D
+@onready var camera_3d: Player_Camera = $Camera3D
 
 @export var maxHealth : float = 20
 @export var playerUIScreen : Control

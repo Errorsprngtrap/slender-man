@@ -10,6 +10,8 @@ material = SubResource("StandardMaterial3D_4d8j6")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3d320"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_ssidi"]
+
 [node name="Slender" type="CharacterBody3D" unique_id=1873581079]
 collision_layer = 16
 collision_mask = 7
@@ -30,6 +32,10 @@ shape = SubResource("CapsuleShape3D_3d320")
 
 [node name="TPTimer" type="Timer" parent="." unique_id=1407726225]
 wait_time = 40.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1420593467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25918353, 0)
+mesh = SubResource("BoxMesh_ssidi")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="TPTimer" to="." method="_on_tp_timer_timeout"]
