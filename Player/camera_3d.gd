@@ -20,5 +20,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			print("detected escape key")
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			
-	if event is InputEventMouseMotion and event.is_pressed():
+	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
