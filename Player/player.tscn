@@ -11,7 +11,7 @@ radius = 0.5292969
 height = 2.057129
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssidi"]
-size = Vector3(20, 20, 1)
+size = Vector3(10, 20, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=1494073252]
 collision_mask = 2

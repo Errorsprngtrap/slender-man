@@ -70,4 +70,3 @@ func SlenderDetected(delta:float)->void:
 				print(health)
 			else :
 				get_tree().quit()
-	

@@ -13,8 +13,15 @@ var maxRad
 var collectedPage
 
 var waitPerPage = {
-	"0" : {"CD" :10 , "minRad" : 10 , "maxRad" : 20},
-	"1" : {"CD" :5 , "minRad" : 10 , "maxRad" : 15},
+	"0" : {"CD" :60 , "minRad" : 100 , "maxRad" : 120},
+	"1" : {"CD" :60 , "minRad" : 60 , "maxRad" : 105},
+	"2" : {"CD" :50 , "minRad" : 60 , "maxRad" : 105},
+	"3" : {"CD" :40 , "minRad" : 60 , "maxRad" : 105},
+	"4" : {"CD" :35 , "minRad" : 60 , "maxRad" : 105},
+	"5" : {"CD" :30 , "minRad" : 60 , "maxRad" : 105},
+	"6" : {"CD" :25 , "minRad" : 60 , "maxRad" : 105},
+	"7" : {"CD" :20 , "minRad" : 60 , "maxRad" : 105},
+	"8" : {"CD" :15 , "minRad" : 60 , "maxRad" : 105},
 }
 
 const SPD : float = 3.25
@@ -54,6 +61,7 @@ func _on_tp_timer_timeout() -> void:
 
 func get_tp_point() -> Vector3:
 	var space_state = get_world_3d().direct_space_state
+	var half_height : float = (collision_shape.shape as CapsuleShape3D).height / 2.0
 	var attempts := 0
 
 	while attempts < 20:
@@ -63,30 +71,29 @@ func get_tp_point() -> Vector3:
 		var dist := randf_range(minRad, maxRad)
 		var target_xz := player.global_position + Vector3(cos(angle), 0, sin(angle)) * dist
 
-		# 1. y a-t-il un sol ici ?
 		var ray_query := PhysicsRayQueryParameters3D.create(
 			target_xz + Vector3(0, 50, 0),
 			target_xz + Vector3(0, -50, 0)
 		)
-		ray_query.collision_mask = 2 # layer "Map"
+		ray_query.collision_mask = 2
 		var floor_result := space_state.intersect_ray(ray_query)
 
 		if floor_result.is_empty():
 			continue
 
-		# 2. est-ce que Slender chevaucherait un mur/objet ici ?
+		var stand_position = floor_result.position + Vector3(0, half_height, 0)
+
 		var shape_query := PhysicsShapeQueryParameters3D.new()
 		shape_query.shape = collision_shape.shape
-		shape_query.transform = Transform3D(Basis(), floor_result.position)
-		shape_query.collision_mask = 2 # layer "Map"
+		shape_query.transform = Transform3D(Basis(), stand_position)
+		shape_query.collision_mask = 2
 
 		if not space_state.intersect_shape(shape_query).is_empty():
 			continue
 
-		# 3. est-ce que le joueur le verrait apparaître ?
-		if playerCamera.is_position_in_frustum(floor_result.position):
+		if playerCamera.is_position_in_frustum(stand_position):
 			continue
 
-		return floor_result.position
+		return stand_position
 
 	return global_position

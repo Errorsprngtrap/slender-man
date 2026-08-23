@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://y01l1fcq1beg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ssidi"]
+size = Vector3(800, 1, 800)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ssidi"]
+top_radius = 20.0
+bottom_radius = 20.0
+height = 60.0
+
+[node name="Map" type="Node3D" unique_id=1142832591]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=2051052791]
+mesh = SubResource("BoxMesh_ssidi")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=204382541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.986057, 0)
+mesh = SubResource("CylinderMesh_ssidi")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="." unique_id=1746248124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -170.04814, 23.986057, 0)
+mesh = SubResource("CylinderMesh_ssidi")
