@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cgug74w0warrg"]
+
+[ext_resource type="PackedScene" uid="uid://b1nsq6t26l2bv" path="res://Map/New/map.glb" id="1_q1mhu"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y12nv"]
+data = PackedVector3Array(-170.0295, -1, 68.4424, -170.0295, 1, -129.5069, -170.0295, 1, 68.4424, -170.0295, -1, 68.4424, -170.0295, -1, -129.5069, -170.0295, 1, -129.5069, -170.0295, -1, -129.5069, 170.0295, 1, -129.5069, -170.0295, 1, -129.5069, -170.0295, -1, -129.5069, 170.0295, -1, -129.5069, 170.0295, 1, -129.5069, 170.0295, -1, -129.5069, 170.0295, 1, 68.4424, 170.0295, 1, -129.5069, 170.0295, -1, -129.5069, 170.0295, -1, 68.4424, 170.0295, 1, 68.4424, 170.0295, -1, 68.4424, -170.0295, 1, 68.4424, 170.0295, 1, 68.4424, 170.0295, -1, 68.4424, -170.0295, -1, 68.4424, -170.0295, 1, 68.4424, -170.0295, -1, -129.5069, 170.0295, -1, 68.4424, 170.0295, -1, -129.5069, -170.0295, -1, -129.5069, -170.0295, -1, 68.4424, 170.0295, -1, 68.4424, 170.0295, 1, -129.5069, -170.0295, 1, 68.4424, -170.0295, 1, -129.5069, 170.0295, 1, -129.5069, 170.0295, 1, 68.4424, -170.0295, 1, 68.4424)
+
+[node name="NewMap" type="Node3D" unique_id=457516218]
+
+[node name="map" parent="." unique_id=91647110 instance=ExtResource("1_q1mhu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map" unique_id=1662944521]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/StaticBody3D" unique_id=2015015518]
+shape = SubResource("ConcavePolygonShape3D_y12nv")
+
+[editable path="map"]
