@@ -10,7 +10,7 @@
 [node name="MainScene" type="Node3D" unique_id=1673730376]
 
 [node name="Player" parent="." unique_id=1494073252 node_paths=PackedStringArray("playerUIScreen") instance=ExtResource("2_hsoks")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9865471, 2.1727886, -37.61587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9865471, 22.976133, -37.61587)
 playerUIScreen = NodePath("../UI")
 
 [node name="Battery2" parent="." unique_id=625186073 instance=ExtResource("3_la8ki")]
